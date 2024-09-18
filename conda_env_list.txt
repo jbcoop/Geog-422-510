@@ -1,0 +1,4 @@
+base                  *  C:\Users\jbcoo\miniconda3
+geo                      C:\Users\jbcoo\miniconda3\envs\geo #geospatial
+quack                    C:\Users\jbcoo\miniconda3\envs\quack #duckdb testing
+test                     C:\Users\jbcoo\miniconda3\envs\test #1st test of miniconda - Garbage
