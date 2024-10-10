@@ -1,0 +1,1 @@
+https://medium.com/@faithabiala/how-to-connect-postgis-to-qgis-a-step-by-step-guide-tutorial-72375c7cc71d#:~:text=In%20this%20tutorial,%20I%20will%20use%20PostGIS%20connect),
