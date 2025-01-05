@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QWidget, QPushButton, QHBoxLayout, QVBoxLayout
 
 class RockWidget(QWidget):
     def __init__(self):
@@ -7,4 +7,21 @@ class RockWidget(QWidget):
         self.setGeometry(100, 100, 400, 200)
         self.setStyleSheet("background-color: #000000; color: #ffffff;")
 
-        self.show()
+        button1 = QPushButton("Button 1")
+        button1.clicked.connect(self.button1_clicked)
+        button2 = QPushButton("Button 2")
+        button2.clicked.connect(self.button2_clicked)
+
+        
+
+        button_layout = QVBoxLayout()
+        button_layout.addWidget(button1)
+        button_layout.addWidget(button2)
+
+        self.setLayout(button_layout)
+
+    def button1_clicked(self):
+        print("Button1 clicked")
+
+    def button2_clicked(self):
+        print("Button2 clicked")
