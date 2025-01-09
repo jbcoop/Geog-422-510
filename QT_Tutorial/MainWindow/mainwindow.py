@@ -1,6 +1,6 @@
 from PySide6.QtCore import QSize
 from PySide6.QtGui import QAction, QIcon
-from PySide6.QtWidgets import QMainWindow, QToolBar
+from PySide6.QtWidgets import QMainWindow, QToolBar, QPushButton, QStatusBar
 
 class MainWindow(QMainWindow):
     def __init__(self,app):
@@ -35,14 +35,27 @@ class MainWindow(QMainWindow):
         action1.triggered.connect(self.tool_button_click)
         toolbar.addAction(action1)
 
-        action2 = QAction(QIcon("QT_Tutorial\MainWindow\start.png"), "Another Action", self)
+        action2 = QAction(QIcon("QT_Tutorial\\MainWindow\\start.png"), "Another Action", self)
         action2.setStatusTip("This is another action")
         action2.triggered.connect(self.tool_button_click)
         action2.setCheckable(True)
         toolbar.addAction(action2)
 
+        toolbar.addSeparator()
+        toolbar.addWidget(QPushButton("A Button"))
+        toolbar.addSeparator()
+
+        self.setStatusBar(QStatusBar(self))
+
+        button1 = QPushButton("Button 1")
+        button1.clicked.connect(self.button1_clicked)
+        self.setCentralWidget(button1)
+
+    def button1_clicked(self):
+        print("Button 1 clicked")
+
     def tool_button_click(self):
-        print("Tool button clicked")
+        self.statusBar().showMessage("Tool button clicked", 2000)
 
     def quit_app(self):
         self.app.quit()
